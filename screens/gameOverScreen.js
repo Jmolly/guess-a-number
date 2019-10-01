@@ -1,10 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
-const GameOverScreen = () => {
+const GameOverScreen = ({ userNumber, roundsNumber, onRestart }) => {
   return (
     <View style={styles.screen}>
       <Text>Game over!</Text>
+      <Text>Your number: {userNumber}</Text>
+      <Text>Rounds: {roundsNumber}</Text>
+      <Button title='nEw game!' onPress={onRestart}/>
     </View>
   );
 };
