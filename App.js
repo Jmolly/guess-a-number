@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
 import Header from './components/header';
 import StartGameScreen from './screens/startGameScreen';
 import GameScreen from './screens/gameScreen';
@@ -11,15 +12,15 @@ export default function App() {
     setUserNumber(selectedNumber)
   }
 
-  let content = <StartGameScreen onStartGame={startGameHandler}/>
+  let content = <StartGameScreen onStartGame={startGameHandler} />
 
   if (userNumber) {
-    content = <GameScreen />
+    content = <GameScreen userChoice={userNumber} />
   }
 
   return (
     <View style={styles.screen}>
-      <Header title={'GUESS a NUMBER'} />
+      <Header title='GUESS a NUMBER' />
       {content}
     </View>
   );
